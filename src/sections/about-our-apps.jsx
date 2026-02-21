@@ -42,7 +42,7 @@ export default function AboutOurApps() {
                 {sectionData.map((data, index) => (
                     <motion.div
                         key={data.title}
-                        className={data.className}
+                        className={`${data.className} text-center flex flex-col items-center`}
                         initial={{ y: 150, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}

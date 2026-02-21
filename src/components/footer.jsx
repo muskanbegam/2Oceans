@@ -3,97 +3,67 @@ import { motion } from "framer-motion";
 export default function Footer() {
     return (
         <motion.footer
-            className="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400 mt-40"
+            className="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400  pb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
         >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
-                
-                {/* Left Section */}
-                <div className="sm:col-span-2 lg:col-span-1">
-                    <a href="#!">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                {/* LEFT SIDE */}
+<div className="flex flex-col justify-start translate-y-8 md:translate-y-16">
+
+    <div className="mb-7">
+        <h2 className="text-xl font-semibold text-white mb-3">
+            2Oceans Consultancy Group
+        </h2>
+
+        <p className="leading-relaxed max-w-md">
+            We deliver enterprise training, IT consulting, and future-ready
+            technology solutions designed to help organizations grow, adapt,
+            and succeed in a rapidly evolving digital world.
+        </p>
+    </div>
+
+    {/* Links */}
+    <div className="flex flex-wrap gap-6 text-sm">
+        <a className="hover:text-white transition" href="#about">
+            About
+        </a>
+        <a className="hover:text-white transition" href="#">
+            Careers
+        </a>
+        <a className="hover:text-white transition" href="#contact">
+            Contact
+        </a>
+        <a className="hover:text-white transition" href="#">
+            Privacy Policy
+        </a>
+    </div>
+</div>
+                {/* RIGHT SIDE */}
+                <div className="flex justify-center md:justify-end">
+                    <div className="translate-y-8 md:translate-y-20">
                         <img
-                            className="h-20 w-auto object-contain"
-                            src="/agentix-react/public/assets/logo.png"
+                            className="h-56 sm:h-64 md:h-72 lg:h-80 w-auto object-contain"
+                            src="/assets/logo.png"
                             alt="logo"
                         />
-                    </a>
-
-                    <p className="text-sm/7 mt-4">
-                        We deliver enterprise training, IT consulting, and future-ready
-                        technology solutions designed to help organizations grow, adapt,
-                        and succeed in a rapidly evolving digital world.
-                    </p>
-                </div>
-
-                {/* Company Links */}
-                <div className="flex flex-col lg:items-center lg:justify-center">
-                    <div className="flex flex-col text-sm space-y-2.5">
-                        <h2 className="font-semibold mb-5 text-white">Company</h2>
-                        <a className="hover:text-slate-500 transition" href="#about">
-                            About us
-                        </a>
-                        <a className="hover:text-slate-500 transition" href="#">
-                            Careers
-                            <span className="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">
-                                We’re hiring!
-                            </span>
-                        </a>
-                        <a className="hover:text-slate-500 transition" href="#contact">
-                            Contact us
-                        </a>
-                        <a className="hover:text-slate-500 transition" href="#">
-                            Privacy policy
-                        </a>
-                    </div>
-                </div>
-
-                {/* Newsletter */}
-                <div>
-                    <h2 className="font-semibold text-white mb-5">
-                        Subscribe to our newsletter
-                    </h2>
-
-                    <div className="text-sm space-y-6 max-w-sm">
-                        <p>
-                            The latest news, articles, and resources, sent to your inbox weekly.
-                        </p>
-
-                        <div className="flex items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
-                            <input
-                                className="outline-none w-full py-2 rounded px-2 bg-transparent text-white"
-                                type="email"
-                                placeholder="Enter your email"
-                            />
-                            <button className="bg-indigo-600 px-4 py-2 text-white rounded">
-                                Subscribe
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
 
             {/* Bottom Copyright */}
-            <p className="py-4 text-center border-t mt-6 border-slate-700">
+            <p className="pt-8 mt-10 text-center border-t border-slate-700 text-xs">
                 Copyright 2026 ©{" "}
-                <a
-                    href="https://prebuiltui.com?utm_source=agentix"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    2Oceans
-                </a>{" "}
+                <span className="text-white font-medium">
+                    2Oceans Consultancy Group
+                </span>{" "}
                 • Developed by{" "}
-                <a
-                    href="https://themewagon.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <span className="text-white font-medium">
                     Muskan
-                </a>{" "}
-                • All Right Reserved.
+                </span>{" "}
+                • All Rights Reserved.
             </p>
         </motion.footer>
     );

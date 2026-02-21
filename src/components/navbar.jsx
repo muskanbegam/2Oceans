@@ -33,8 +33,8 @@ export default function Navbar() {
             >
 <a href="#!">
     <img 
-        className="h-24 w-auto" 
-        src="/agentix-react/public/assets/logo.png" 
+        className="h-36 w-auto mt-12" 
+        src="/assets/logo.png" 
         alt="logo" 
     />
 </a>
