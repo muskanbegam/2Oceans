@@ -1,20 +1,17 @@
-# Agentix - AI Agent Tailwind Template
+# 2 oceans
 #### Preview
 
- - [Demo](https://themewagon.github.io/agentix-react/)
-
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/agentix-react/)
+ - [Demo](https://2oceans.in/)
 
 ## Getting Started
 
 1. Clone Repository
 ```
-git clone https://github.com/themewagon/agentix-react.git
+
 ```
 2. Install Dependencies
 ```
-npm i
+npm install 
 ```
 3. Run the development server:
 
@@ -28,13 +25,3 @@ pnpm dev
 bun dev
 ```
 
-## Author 
-```
-Design and code is completely written by PrebuiltUI and development team. 
-```
-
-## License
-
- - Design and Code is Copyright &copy; <a href="https://prebuiltui.com/?utm_source=agentix" target="_blank">PrebuiltUI</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
