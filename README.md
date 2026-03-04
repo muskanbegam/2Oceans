@@ -7,7 +7,7 @@
 
 1. Clone Repository
 ```
-
+https://github.com/muskanbegam/2Oceans.git
 ```
 2. Install Dependencies
 ```
