@@ -6,9 +6,13 @@
 }
 
 body {
-    @apply bg-black text-white text-sm font-poppins antialiased;
+    @apply bg-white text-black text-sm font-poppins antialiased;
 }
 
 button {
     @apply cursor-pointer;
+}
+
+html, body {
+  overflow-x: hidden;
 }

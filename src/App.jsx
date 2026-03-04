@@ -14,7 +14,7 @@ export default function Page() {
         <>
             <LenisScroll />
             <Navbar />
-            <main className="px-6 md:px-16 lg:px-24 xl:px-32">
+            <main className="px-0">
                 <HeroSection />
                 <OurLatestCreation />
                 <AboutOurApps />

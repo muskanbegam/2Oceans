@@ -14,8 +14,8 @@ export default function HeroSection() {
                 <rect x="-92" y="-948" width="1624" height="1624" rx="812" fill="url(#a)" />
                 <defs>
                     <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 428 292)scale(812)">
-                        <stop offset=".63" stopColor="#372AAC" stopOpacity="0" />
-                        <stop offset="1" stopColor="#372AAC" />
+                        <stop offset=".100" stopColor="#0056ec" stopOpacity="0" />
+                        <stop offset="1" stopColor="#ffffff" />
                     </radialGradient>
                 </defs>
             </motion.svg>
@@ -25,8 +25,8 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <div className="size-2.5 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Book a live demo today</span>
+                <div className="size-2.5 bg-green-500 rounded-full animate-pulse "></div>
+                <span className="text-black">Book a live demo today</span>
             </motion.a>
             <motion.h1 className="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl"
                 initial={{ y: 50, opacity: 0 }}

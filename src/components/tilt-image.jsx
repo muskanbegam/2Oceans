@@ -1,87 +1,68 @@
-import { useRef, useState } from "react";
-import { useMotionValue, useSpring, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  Cloud,
+  GitBranch,
+  Cpu,
+  Layout,
+} from "lucide-react";
 
-const springValues = {
-  damping: 30,
-  stiffness: 100,
-  mass: 2,
-};
+const skills = [
+  { name: "Frontend", icon: Layout },
+  { name: "JavaScript", icon: Code },
+  { name: "React", icon: Cpu },
+  { name: "Backend", icon: Database },
+  { name: "Cloud", icon: Cloud },
+  { name: "Git", icon: GitBranch },
+];
 
-export default function TiltedImage({ rotateAmplitude = 3 }) {
-  const ref = useRef(null);
-
-  const rotateX = useSpring(useMotionValue(0), springValues);
-  const rotateY = useSpring(useMotionValue(0), springValues);
-
-  const [lastY, setLastY] = useState(0);
-
-  function handleMouse(e) {
-    if (!ref.current) return;
-
-    const rect = ref.current.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
-
-    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
-    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
-
-    rotateX.set(rotationX);
-    rotateY.set(rotationY);
-
-    setLastY(offsetY);
-  }
-
-  function handleMouseLeave() {
-    rotateX.set(0);
-    rotateY.set(0);
-  }
-
+export default function SkillsRow() {
   return (
-    <motion.figure
-      ref={ref}
-      className="relative w-full max-w-6xl mx-auto mt-16 aspect-[16/9] md:aspect-[4/3] lg:aspect-[16/9] perspective-1000 flex items-center justify-center"
-      onMouseMove={handleMouse}
-      onMouseLeave={handleMouseLeave}
-      initial={{ y: 120, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 250, damping: 40 }}
-    >
-      <motion.div
-        className="relative w-full h-full rounded-3xl overflow-hidden transform-style-preserve-3d shadow-xl"
-        style={{ rotateX, rotateY }}
-      >
-        {/* Background Image */}
-        <img
-          src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-2.png"
-          alt="Digital Transformation"
-          className="w-full h-full object-cover"
-        />
+    <section className="bg-whitepy-12 md:py-16 overflow-hidden pt-6 md:pb-0">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Infinite Scroll Wrapper */}
+        <div className="relative overflow-hidden">
+          
+          {/* Fade Left */}
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
-        {/* Content */}
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16 lg:px-24 text-white"
-          style={{ transform: "translateZ(60px)" }}
-        >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight md:leading-snug">
-            Accelerating Digital Transformation
-          </h1>
+          {/* Fade Right */}
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-          <p className="max-w-3xl text-sm md:text-lg lg:text-xl opacity-90 leading-relaxed md:leading-relaxed">
-            We don’t just implement technology — we empower people to use it with confidence.
-          </p>
-
-          <a
-            href="#creations"
-            className="inline-block mt-6 md:mt-8 px-10 py-4 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl"
+          <motion.div
+            className="flex gap-4 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              ease: "linear",
+            }}
           >
-            Explore Our Services
-          </a>
+            {[...skills, ...skills].map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex items-center gap-3
+                             bg-gray-50 border border-gray-200
+                             px-5 py-3 rounded-full
+                             shadow-sm
+                             text-sm md:text-base
+                             whitespace-nowrap"
+                >
+                  <Icon className="w-5 h-5 text-gray-700" />
+                  <span className="font-medium text-gray-800">
+                    {skill.name}
+                  </span>
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
-      </motion.div>
-    </motion.figure>
+      </div>
+    </section>
   );
 }

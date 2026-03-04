@@ -33,7 +33,7 @@ export default function Navbar() {
             >
 <a href="#!">
     <img 
-        className="h-36 w-auto mt-12" 
+        className="h-56 w-auto mt-2" 
         src="/assets/logo.png" 
         alt="logo" 
     />
